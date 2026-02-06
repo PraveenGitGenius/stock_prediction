@@ -57,7 +57,7 @@ stock = st.sidebar.text_input("Stock Symbol", "AAPL").upper().strip()
 years = st.sidebar.slider("Forecast Years", 1, 3)
 period = years * 365
 
-st.cache_data
+@st.cache_data
 def load_data(ticker):
     try:
         df = yf.download(ticker, start=START, end=TODAY)
